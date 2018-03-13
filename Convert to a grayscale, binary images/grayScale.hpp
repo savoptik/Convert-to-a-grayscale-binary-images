@@ -15,9 +15,7 @@
 
 class grayScale {
 public:
-    grayScale(std::string); // конструктор.
-    ~grayScale(); // диструктор.
-    void showGrayImage(); // отображатель текущего состояния картинки.
+    virtual void showCurrentVersion(); // отображатель текущего состояния картинки.
     
 protected:
     cv::Mat image; // хранилище изображения.

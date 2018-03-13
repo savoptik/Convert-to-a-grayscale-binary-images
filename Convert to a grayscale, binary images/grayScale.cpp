@@ -13,16 +13,7 @@
 using namespace std;
 using namespace cv;
 
-grayScale::grayScale(string filePath) { // принимаем строку с путём к файлу.
-    image = imread(filePath); // читаем в матрицу изображение.
-    conversionTOGrayScale(); // преобразуем изображение к полутоновому.
-}
-
-grayScale::~grayScale() {
-    image.deallocate(); // уничтожаем изображение.
-}
-
-void grayScale::showGrayImage() {
+void grayScale::showCurrentVersion()() {
     imshow("Gray image", image); // отображаем изображение.
     waitKey(); // ждём нажатия клавиши.
     destroyWindow("Gray image"); // уничтожаем окно.

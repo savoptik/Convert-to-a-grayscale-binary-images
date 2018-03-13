@@ -51,7 +51,6 @@
 		FE068C292057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068BFF2057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib */; };
 		FE068C2A2057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C002057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib */; };
 		FE068C2B2057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */; };
-		FE068C31205847CE005D854A /* BinarizationManualWelectionThreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE068C2F205847CE005D854A /* BinarizationManualWelectionThreshold.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -113,8 +112,6 @@
 		FE068BFF2057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_bgsegm.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_bgsegm.3.4.0.dylib; sourceTree = "<group>"; };
 		FE068C002057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_structured_light.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_structured_light.3.4.0.dylib; sourceTree = "<group>"; };
 		FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_surface_matching.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_surface_matching.3.4.0.dylib; sourceTree = "<group>"; };
-		FE068C2F205847CE005D854A /* BinarizationManualWelectionThreshold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinarizationManualWelectionThreshold.cpp; sourceTree = "<group>"; };
-		FE068C30205847CE005D854A /* BinarizationManualWelectionThreshold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinarizationManualWelectionThreshold.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
-				FE068C2F205847CE005D854A /* BinarizationManualWelectionThreshold.cpp */,
-				FE068C30205847CE005D854A /* BinarizationManualWelectionThreshold.hpp */,
 				FE068BD42057E7AE005D854A /* grayScale.cpp */,
 				FE068BD52057E7AE005D854A /* grayScale.hpp */,
 			);
@@ -307,7 +302,6 @@
 			files = (
 				FE068BCE2057E38C005D854A /* main.cpp in Sources */,
 				FE068BD62057E7AE005D854A /* grayScale.cpp in Sources */,
-				FE068C31205847CE005D854A /* BinarizationManualWelectionThreshold.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
