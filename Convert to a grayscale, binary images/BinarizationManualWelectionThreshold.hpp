@@ -12,9 +12,10 @@
 #include <stdio.h>
 #include "grayScale.hpp"
 
-class BinarizationManualWelectionThreshold : grayScale {
+class binarizationManualWelectionThreshold: grayScale {
 public:
-    <#member functions#>
+    virtual void conversionToBinary(ushort); // метод выполняет бираризацию изображения.
+    void outBinaryImages(); // метод выводит бинарное изображение.
 };
 
 #endif /* BinarizationManualWelectionThreshold_hpp */
