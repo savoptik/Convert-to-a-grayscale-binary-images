@@ -10,17 +10,17 @@
 using namespace std;
 using namespace cv;
 
-grayScale::grayScale(string filePath) {
-    image = imread(filePath);
-    conversionTOGrayScale();
+grayScale::grayScale(string filePath) { // принимаем строку с путём к файлу.
+    image = imread(filePath); // читаем в матрицу изображение.
+    conversionTOGrayScale(); // преобразуем изображение к полутоновому.
 }
 
 grayScale::~grayScale() {
-    image.deallocate();
-    destroyAllWindows();
+    image.deallocate(); // уничтожаем изображение.
 }
 
 void grayScale::showGrayImage() {
-    imshow("Gray image", image);
-    waitKey();
+    imshow("Gray image", image); // отображаем изображение.
+    waitKey(); // ждём нажатия клавиши.
+    destroyWindow("Gray image"); // уничтожаем окно.
 }
