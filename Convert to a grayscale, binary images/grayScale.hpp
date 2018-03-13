@@ -21,8 +21,6 @@ public:
     
 protected:
     cv::Mat image; // хранилище изображения.
-    
-private:
     void conversionTOGrayScale(); // метод преобразует изображение к полутоновому.
     
 };
