@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
+#include "grayScale.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    grayScale pic("/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png");
+    pic.showGrayImage();
     return 0;
 }
