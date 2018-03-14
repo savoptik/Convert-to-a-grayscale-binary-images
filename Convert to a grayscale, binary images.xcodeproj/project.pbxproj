@@ -52,6 +52,7 @@
 		FE068C2A2057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C002057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib */; };
 		FE068C2B2057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */; };
 		FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22A205974AB00879F74 /* binaryConversions.cpp */; };
+		FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,6 +116,8 @@
 		FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_surface_matching.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_surface_matching.3.4.0.dylib; sourceTree = "<group>"; };
 		FE2ED22A205974AB00879F74 /* binaryConversions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binaryConversions.cpp; sourceTree = "<group>"; };
 		FE2ED22B205974AB00879F74 /* binaryConversions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binaryConversions.hpp; sourceTree = "<group>"; };
+		FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binarysationSetthreshold.cpp; sourceTree = "<group>"; };
+		FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binarysationSetthreshold.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
+				FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */,
+				FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */,
 				FE068BD42057E7AE005D854A /* grayScale.cpp */,
 				FE2ED22A205974AB00879F74 /* binaryConversions.cpp */,
 				FE2ED22B205974AB00879F74 /* binaryConversions.hpp */,
@@ -306,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE068BCE2057E38C005D854A /* main.cpp in Sources */,
+				FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */,
 				FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */,
 				FE068BD62057E7AE005D854A /* grayScale.cpp in Sources */,
 			);
