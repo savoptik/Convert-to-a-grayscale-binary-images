@@ -27,3 +27,13 @@ void binarysationSetthreshold::showCurrentVersion() {
     waitKey();
     destroyWindow("Binary version");
 }
+
+void binarysationSetthreshold::conversionToBinary(ushort threshold) {
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            image.at<Vec3b>(i, j)[0] = image.at<Vec3b>(i, j)[0] < threshold? 0: 255;
+            image.at<Vec3b>(i, j)[1] = image.at<Vec3b>(i, j)[1] < threshold? 0: 255;
+            image.at<Vec3b>(i, j)[2] = image.at<Vec3b>(i, j)[2] < threshold? 0: 255;
+        }
+    }
+}
