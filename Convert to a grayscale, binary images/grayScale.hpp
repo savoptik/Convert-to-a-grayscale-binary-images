@@ -9,18 +9,16 @@
 #ifndef grayScale_hpp
 #define grayScale_hpp
 
+#include "binaryConversions.hpp"
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <string>
 
-class grayScale {
+class grayScale: binaryConversions {
 public:
-    virtual void showCurrentVersion(); // отображатель текущего состояния картинки.
-    
-protected:
-    cv::Mat image; // хранилище изображения.
-    void conversionTOGrayScale(); // метод преобразует изображение к полутоновому.
-    
+    grayScale(std::string);
+    ~grayScale();
+    virtual void showCurrentVersion();
 };
 
 #endif /* grayScale_hpp */

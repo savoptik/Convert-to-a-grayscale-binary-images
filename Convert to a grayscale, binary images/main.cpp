@@ -8,13 +8,12 @@
 
 #include <iostream>
 #include "grayScale.hpp"
-#include "BinarizationManualWelectionThreshold.hpp"
 #include <string>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png";
     grayScale pic(filePath);
-    pic.showGrayImage();
+    pic.showCurrentVersion();
     return 0;
 }
