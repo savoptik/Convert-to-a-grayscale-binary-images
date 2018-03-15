@@ -16,7 +16,7 @@
 class binaryConversions {
 public:
     virtual void showCurrentVersion() {} // отображатель текущего состояния картинки.
-    cv::Mat& getImageMatrix(){return image;}
+    cv::Mat& getImageMatrix(){return image;} // просто возврат ссылки на картинку. мало ли что?
     
 protected:
     cv::Mat image; // хранилище изображения.

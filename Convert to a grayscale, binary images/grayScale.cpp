@@ -13,16 +13,16 @@
 using namespace cv;
 
 grayScale::grayScale(std::string filePash) {
-    image = imread(filePash);
-    conversionTOGrayScale();
+    image = imread(filePash); // чтение.
+    conversionTOGrayScale(); // преобразование к полутоновому.
 }
 
 grayScale::~grayScale() {
-    image.deallocate();
+    image.deallocate(); // освобождение памяти.
 }
 
 void grayScale::showCurrentVersion() {
-    imshow("Gray scale", image);
-    waitKey();
-    destroyWindow("Gray scale");
+    imshow("Gray scale", image); // отображение изображения.
+    waitKey(); // ожидание нажатия клавиши.
+    destroyWindow("Gray scale"); // уничтожение окна.
 }

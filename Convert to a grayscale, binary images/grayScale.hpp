@@ -16,9 +16,9 @@
 
 class grayScale: binaryConversions {
 public:
-    grayScale(std::string);
-    ~grayScale();
-    virtual void showCurrentVersion();
+    grayScale(std::string); // конструктор принимает имя файла, читает файл и преобразует изображение к полутоновому.
+    ~grayScale(); // Деструктор освобождает память.
+    virtual void showCurrentVersion(); // отображает изменённую картинку.
 };
 
 #endif /* grayScale_hpp */
