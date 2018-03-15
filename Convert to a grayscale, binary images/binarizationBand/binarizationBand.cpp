@@ -13,15 +13,23 @@
 using namespace cv;
 
 void binarizationBand::showCurrentVersion() { 
-    <#code#>;
+    imshow("Binarization band", <#InputArray mat#>); // вывод изображения
+    waitKey(); // ожидание нажатия клавиши.
+    destroyWindow("Binarization band"); // уничтожение окон.
 }
 
 binarizationBand::~binarizationBand() { 
-    <#code#>;
+    image.deallocate(); // освобождение памяти.
 }
 
 binarizationBand::binarizationBand(std::string filePash, ushort dBound, ushort uBound) { 
-    <#code#>;
+    image = imread(filePash); // загрузка изображения.
+    conversionTOGrayScale(); // преобразование изображения к полутоновому.
+    if (dBound < uBound) { // если значение нижней границы диапазона меньше верхней
+        conversionToBinary(dBound, uBound); // запускаем преобразование.
+    } else { // иначе
+        conversionToBinary(uBound, dBound); // запускаем преобразование поменяв местами значение диапазона.
+    }
 }
 
 void binarizationBand::conversionToBinary(ushort dBound, ushort uBound) { 
