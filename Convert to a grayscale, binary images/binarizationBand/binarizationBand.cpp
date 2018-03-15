@@ -33,6 +33,10 @@ binarizationBand::binarizationBand(std::string filePash, ushort dBound, ushort u
 }
 
 void binarizationBand::conversionToBinary(ushort dBound, ushort uBound) { 
-    <#code#>;
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            <#statements#>
+        }
+    }
 }
 
