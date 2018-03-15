@@ -15,12 +15,11 @@
 
 class binarysationSetthreshold: binaryConversions{
 public:
-    binarysationSetthreshold(std::string, ushort); // конструктор выполняет чтение файла, и преобразование с начала к полутоновому, а потом к бинаризованному.
+    binarysationSetthreshold(std::string); // конструктор выполняет чтение файла, и преобразование к полутоновому.
     ~binarysationSetthreshold(); // деструктор освобождает память.
     virtual void showCurrentVersion(); // метод выводит изменённое изображение.
-    
-private:
-    void conversionToBinary(ushort); // метод выполняет приведение полутонового изображения к чёрнобелому.
+    void conversionToBinaryUpBound(ushort); // метод выполняет приведение полутонового изображения к чёрнобелому с верхней границей.
+    void conversionToBinaryDownBound(ushort); // метод приводит изображение к бинарному с нижней грацицей
 };
 
 #endif /* binarysationSetthreshold_hpp */

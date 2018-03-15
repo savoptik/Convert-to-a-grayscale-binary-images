@@ -51,7 +51,6 @@
 		FE068C292057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068BFF2057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib */; };
 		FE068C2A2057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C002057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib */; };
 		FE068C2B2057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */; };
-		FE20605D205A6F540090CCAE /* binarizationEstablishedBoundaries.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE20605B205A6F540090CCAE /* binarizationEstablishedBoundaries.cpp */; };
 		FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22A205974AB00879F74 /* binaryConversions.cpp */; };
 		FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */; };
 /* End PBXBuildFile section */
@@ -115,8 +114,6 @@
 		FE068BFF2057F7CE005D854A /* libopencv_bgsegm.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_bgsegm.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_bgsegm.3.4.0.dylib; sourceTree = "<group>"; };
 		FE068C002057F7CE005D854A /* libopencv_structured_light.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_structured_light.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_structured_light.3.4.0.dylib; sourceTree = "<group>"; };
 		FE068C012057F7CE005D854A /* libopencv_surface_matching.3.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_surface_matching.3.4.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.4.0_1/lib/libopencv_surface_matching.3.4.0.dylib; sourceTree = "<group>"; };
-		FE20605B205A6F540090CCAE /* binarizationEstablishedBoundaries.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binarizationEstablishedBoundaries.cpp; sourceTree = "<group>"; };
-		FE20605C205A6F540090CCAE /* binarizationEstablishedBoundaries.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binarizationEstablishedBoundaries.hpp; sourceTree = "<group>"; };
 		FE2ED22A205974AB00879F74 /* binaryConversions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binaryConversions.cpp; sourceTree = "<group>"; };
 		FE2ED22B205974AB00879F74 /* binaryConversions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binaryConversions.hpp; sourceTree = "<group>"; };
 		FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binarysationSetthreshold.cpp; sourceTree = "<group>"; };
@@ -197,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
-				FE20605A205A6F1C0090CCAE /*  binarizationEstablishedBoundaries */,
 				FE2ED234205A6B8200879F74 /*  binarysationSetthreshold */,
 				FE2ED236205A6C8600879F74 /* grayScale */,
 				FE2ED233205A6A1D00879F74 /* binaryConversions */,
@@ -252,15 +248,6 @@
 				FE068BDF2057F7CD005D854A /* libopencv_xphoto.3.4.0.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FE20605A205A6F1C0090CCAE /*  binarizationEstablishedBoundaries */ = {
-			isa = PBXGroup;
-			children = (
-				FE20605B205A6F540090CCAE /* binarizationEstablishedBoundaries.cpp */,
-				FE20605C205A6F540090CCAE /* binarizationEstablishedBoundaries.hpp */,
-			);
-			path = " binarizationEstablishedBoundaries";
 			sourceTree = "<group>";
 		};
 		FE2ED233205A6A1D00879F74 /* binaryConversions */ = {
@@ -351,7 +338,6 @@
 				FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */,
 				FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */,
 				FE068BD62057E7AE005D854A /* grayScale.cpp in Sources */,
-				FE20605D205A6F540090CCAE /* binarizationEstablishedBoundaries.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
