@@ -13,10 +13,10 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png";
-    grayScale pic(filePath);
-    pic.showCurrentVersion();
-    binarysationSetthreshold bst(filePath, 130);
-    bst.showCurrentVersion();
+    string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png"; // путь к файлу.
+    grayScale pic(filePath); // создание объекта
+    pic.showCurrentVersion(); // вывод преобразованного изображения.
+    binarysationSetthreshold bst(filePath, 130); // создание объекта преобразованного изображения и задание порога.
+    bst.showCurrentVersion(); // вывод бинаризованного изображения.
     return 0;
 }
