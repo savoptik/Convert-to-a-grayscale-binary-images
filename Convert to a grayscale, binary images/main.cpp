@@ -10,6 +10,7 @@
 #include "grayScale.hpp"
 #include <string>
 #include "binarysationSetthreshold.hpp"
+#include <binarizationEstablishedBoundaries.hpp>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -18,5 +19,7 @@ int main(int argc, const char * argv[]) {
     pic.showCurrentVersion(); // вывод преобразованного изображения.
     binarysationSetthreshold bst(filePath, 130); // создание объекта преобразованного изображения и задание порога.
     bst.showCurrentVersion(); // вывод бинаризованного изображения.
+    binarizationEstablishedBoundaries beb(filePath, 50, 50); // создание объекта бинаризации с заданными верхней и нижней границей.
+    beb.showCurrentVersion(); // вывод изображения.
     return 0;
 }
