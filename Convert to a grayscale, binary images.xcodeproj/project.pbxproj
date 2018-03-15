@@ -197,14 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
-				FE2ED230205A699500879F74 /* binarizationEstablishedBoundaries.cpp */,
-				FE2ED231205A699500879F74 /* binarizationEstablishedBoundaries.hpp */,
-				FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */,
-				FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */,
-				FE068BD42057E7AE005D854A /* grayScale.cpp */,
-				FE2ED22A205974AB00879F74 /* binaryConversions.cpp */,
-				FE2ED22B205974AB00879F74 /* binaryConversions.hpp */,
-				FE068BD52057E7AE005D854A /* grayScale.hpp */,
+				FE2ED235205A6C3500879F74 /* binarizationEstablishedBoundaries */,
+				FE2ED234205A6B8200879F74 /*  binarysationSetthreshold */,
+				FE2ED236205A6C8600879F74 /* grayScale */,
+				FE2ED233205A6A1D00879F74 /* binaryConversions */,
 			);
 			path = "Convert to a grayscale, binary images";
 			sourceTree = "<group>";
@@ -256,6 +252,42 @@
 				FE068BDF2057F7CD005D854A /* libopencv_xphoto.3.4.0.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE2ED233205A6A1D00879F74 /* binaryConversions */ = {
+			isa = PBXGroup;
+			children = (
+				FE2ED22A205974AB00879F74 /* binaryConversions.cpp */,
+				FE2ED22B205974AB00879F74 /* binaryConversions.hpp */,
+			);
+			path = binaryConversions;
+			sourceTree = "<group>";
+		};
+		FE2ED234205A6B8200879F74 /*  binarysationSetthreshold */ = {
+			isa = PBXGroup;
+			children = (
+				FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */,
+				FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */,
+			);
+			path = " binarysationSetthreshold";
+			sourceTree = "<group>";
+		};
+		FE2ED235205A6C3500879F74 /* binarizationEstablishedBoundaries */ = {
+			isa = PBXGroup;
+			children = (
+				FE2ED230205A699500879F74 /* binarizationEstablishedBoundaries.cpp */,
+				FE2ED231205A699500879F74 /* binarizationEstablishedBoundaries.hpp */,
+			);
+			path = binarizationEstablishedBoundaries;
+			sourceTree = "<group>";
+		};
+		FE2ED236205A6C8600879F74 /* grayScale */ = {
+			isa = PBXGroup;
+			children = (
+				FE068BD42057E7AE005D854A /* grayScale.cpp */,
+				FE068BD52057E7AE005D854A /* grayScale.hpp */,
+			);
+			path = grayScale;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
