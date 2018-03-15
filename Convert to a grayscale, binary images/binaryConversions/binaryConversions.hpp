@@ -21,7 +21,6 @@ public:
 protected:
     cv::Mat image; // хранилище изображения.
     void conversionTOGrayScale(); // метод преобразует изображение к полутоновому.
-    
 };
 
 #endif /* binaryConversions_hpp */
