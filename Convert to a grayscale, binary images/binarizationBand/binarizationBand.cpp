@@ -7,3 +7,24 @@
 //
 
 #include "binarizationBand.hpp"
+#include <opencv2/highgui.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+using namespace cv;
+
+void binarizationBand::showCurrentVersion() { 
+    <#code#>;
+}
+
+binarizationBand::~binarizationBand() { 
+    <#code#>;
+}
+
+binarizationBand::binarizationBand(std::string filePash, ushort dBound, ushort uBound) { 
+    <#code#>;
+}
+
+void binarizationBand::conversionToBinary(ushort dBound, ushort uBound) { 
+    <#code#>;
+}
+
