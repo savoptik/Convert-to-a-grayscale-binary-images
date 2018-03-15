@@ -20,7 +20,7 @@ public:
     virtual void showCurrentVersion(); // отображает изображение.
     
 private:
-    virtual void conversionToBinary(ushort); // метод выполняет приведение полутонового изображения к чёрнобелому.
+    void conversionToBinary(ushort, ushort); // метод выполняет приведение полутонового изображения к чёрнобелому.
 };
 
 #endif /* binarizationEstablishedBoundaries_hpp */
