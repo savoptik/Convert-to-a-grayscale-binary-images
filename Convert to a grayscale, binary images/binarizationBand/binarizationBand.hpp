@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "binaryConversions.hpp"
+#include <string>
 
 class binarizationBand: binaryConversions {
 public:
