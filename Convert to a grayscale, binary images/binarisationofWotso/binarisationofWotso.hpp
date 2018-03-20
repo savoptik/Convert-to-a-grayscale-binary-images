@@ -18,7 +18,8 @@ public:
     binarisationofWotso(std::string filePash); // конструктор загрузит изображение, запустит приведение изображения к полутоновому, запустит построение гистограммы.
     ~binarisationofWotso(); // деструктор освободит память.
     virtual void showCurrantStat(); // вывод изображения.
-    void conversionToBinaryOfVocoGlobale(); // глобальная бинаризация Воцо
+    void conversionToBinaryOfVocoGlobale(); // глобальная бинаризация Оцо
+    void exportToDisk(std::string filePash); // метод записывает полученное изображение на диск.
 private:
     ushort findThreshold(); // метод вычисление порога.
 };

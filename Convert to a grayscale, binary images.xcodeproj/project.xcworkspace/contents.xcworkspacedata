@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Convert to a grayscale, binary images/histogramEqualization.cpp">
-   </FileRef>
-   <FileRef
-      location = "group:../Convert to a grayscale, binary images/histogramEqualization.hpp">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
