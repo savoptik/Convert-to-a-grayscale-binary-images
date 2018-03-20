@@ -32,7 +32,5 @@ int main(int argc, const char * argv[]) {
     binarisationofWotso BWG(filePath); // создание объекта, запуск конструктора.
     BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.
     BWG.showCurrantStat(); // отображение.
-    string fileWrite = "/Users/artemsemenov/Desktop/result_BOG.png"; // путь для экспорта.
-    BWG.exportToDisk(fileWrite); // запись на диск.
     return 0;
 }

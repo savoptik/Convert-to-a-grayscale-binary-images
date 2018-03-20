@@ -17,7 +17,7 @@ public:
     virtual void showCurrantStat(); // вывод результата.
 protected:
     cv::Mat bHist; // матрица для гистограммы синего цвета.
-    void plottingHistogram(); // построение гистограммы.
+    virtual void plottingHistogram(); // построение гистограммы.
     void normalizationHistogram(); // нормализация гистограммы.
     void buildingStackedHistogram(); // построение гистограммы с накоплением.
     void uniformDistributionValues(); // ровномерное распределение значений.
