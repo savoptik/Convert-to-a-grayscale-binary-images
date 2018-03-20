@@ -11,6 +11,7 @@
 #include <string>
 #include "binarysationSetthreshold.hpp"
 using namespace std;
+#include "binarizationBand.hpp"
 
 int main(int argc, const char * argv[]) {
     string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png"; // путь к файлу.
@@ -22,5 +23,7 @@ int main(int argc, const char * argv[]) {
     bst2.conversionToBinaryDownBound(130); // преобразование с верхней границей.
     bst1.showCurrentVersion(); // вывод изображения бинаризованого с верхней границей.
     bst2.showCurrentVersion(); // вывод изображения, бинаризованного с нижней границей.
+    binarizationBand bb(filePath, 100, 200); // создание объекта.
+    bb.showCurrentVersion(); // вывод изображения.
     return 0;
 }

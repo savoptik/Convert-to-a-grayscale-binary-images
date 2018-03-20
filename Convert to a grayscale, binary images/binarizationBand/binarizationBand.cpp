@@ -13,7 +13,7 @@
 using namespace cv;
 
 void binarizationBand::showCurrentVersion() { 
-    imshow("Binarization band", <#InputArray mat#>); // вывод изображения
+    imshow("Binarization band", image); // вывод изображения
     waitKey(); // ожидание нажатия клавиши.
     destroyWindow("Binarization band"); // уничтожение окон.
 }
@@ -35,8 +35,10 @@ binarizationBand::binarizationBand(std::string filePash, ushort dBound, ushort u
 void binarizationBand::conversionToBinary(ushort dBound, ushort uBound) { 
     for (int i = 0; i < image.rows; i++) {
         for (int j = 0; j < image.cols; j++) {
-            <#statements#>
+            auto buf = image.at<Vec3b>(i, j);
+            image.at<Vec3b>(i, j)[0] = ((buf[0] > dBound) && (buf[0] < uBound))? 255: 0;
+            image.at<Vec3b>(i, j)[1] = ((buf[1] > dBound) && (buf[1] < uBound))? 255: 0;
+            image.at<Vec3b>(i, j)[2] = ((buf[2] > dBound) && (buf[2] < uBound))? 255: 0;
         }
     }
 }
-
