@@ -24,8 +24,11 @@ int main(int argc, const char * argv[]) {
     bst2.conversionToBinaryDownBound(130); // преобразование с верхней границей.
     bst1.showCurrentVersion(); // вывод изображения бинаризованого с верхней границей.
     bst2.showCurrentVersion(); // вывод изображения, бинаризованного с нижней границей.
+    // бинаризация с диапазоном.
     binarizationBand bb(filePath, 100, 200); // создание объекта.
     bb.showCurrentVersion(); // вывод изображения.
+    Бинаризация Вотсо
+    // Глобальная.
     binarisationofWotso BWG(filePath); // создание объекта, запуск конструктора.
     BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.
     BWG.showCurrantStat(); // отображение.
