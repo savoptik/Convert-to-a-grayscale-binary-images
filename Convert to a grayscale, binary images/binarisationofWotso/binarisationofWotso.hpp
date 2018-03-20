@@ -11,10 +11,9 @@
 
 #include <stdio.h>
 #include "histogramEqualization.hpp"
-#include "binarysationSetthreshold.hpp"
 #include <string>
 
-class binarisationofWotso: histogramEqualization, binarysationSetthreshold {
+class binarisationofWotso: histogramEqualization {
 public:
     binarisationofWotso(std::string filePash);
     ~binarisationofWotso();

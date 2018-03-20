@@ -10,7 +10,6 @@
 #define histogramEqualization_hpp
 
 #include <stdio.h>
-#include <string>
 #include "binaryConversions.hpp"
 
 class histogramEqualization: binaryConversions {
