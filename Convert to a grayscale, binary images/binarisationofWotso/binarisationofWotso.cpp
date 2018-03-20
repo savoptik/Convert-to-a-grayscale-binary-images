@@ -30,26 +30,30 @@ binarisationofWotso::~binarisationofWotso() {
 
 ushort binarisationofWotso::findThreshold() {
     ushort t = 0;
-    float q = 0.0, q1 = 0.0, q2 = 0.0, mu = 0.0, mu1 = 0.0, mu2 = 0.0, mu1next = 0.0, mu2next = 0.0, sigmaT = 0.0;
+    double q = 0.0, q1 = 0.0, q2 = 0.0, mu = 0.0, mu1 = 0.0, mu2 = 0.0, mu1next = 0.0, mu2next = 0.0, sigmaT = 0.0;
     // соберём всю сумму.
     for (int i = 0; i < 255; i++) {
         q += bHist.at<float>(i);
     }
     for (int i = 0; i < 255; i++) {
         q1 += bHist.at<float>(i); // находим q1.
-        q2 = q - q1; // найдём q2.
+                 q2 = q - q1; // найдём q2.
         mu = q1*mu1 + q2*mu2; // mu(t) = q1(t)*mu1(t) + q2(t)*mu2(t)
-        mu1next = (q1 * mu1 + (i+1)*bHist.at<float>(i+1)) / (q1 + bHist.at<float>(i+1)); // mu1(t+1) = (q1(t) * mu1(t) + (t+1)*p(t+1))/(q1(t+1))
-        mu2next = (mu - (q1 + bHist.at<float>(i+1))*mu1next) / (1 - (q1 + bHist.at<float>(i+1))); // mu2(t+1) = (mu(t) -q1(t+1)*mu1(t+1))/(1-q1(t+1))
-        float sigmaI = q1 * (1 - q1) * (mu1 - mu2) * (mu1 - mu2); // sigma^2 = q1(t)(1 - q1(t))(mu1(t) - mu2(t)^2
+        if ((q1 + bHist.at<float>(i+1)) != 0) {
+            mu1next = (q1 * mu1 + (i+1)*bHist.at<float>(i+1)) / (q1 + bHist.at<float>(i+1)); // mu1(t+1) = (q1(t) * mu1(t) + (t+1)*p(t+1))/(q1(t+1))
+        }
+        if ((1 - q1 + bHist.at<float>(i+1)) != 0) {
+            mu2next = (mu - (q1 + bHist.at<float>(i+1))*mu1next) / (1 - (q1 + bHist.at<float>(i+1))); // mu2(t+1) = (mu(t) -q1(t+1)*mu1(t+1))/(1-q1(t+1))
+        }
+        double sigmaI = q1 * (1 - q1) * (mu1 - mu2); // sigma^2 = q1(t)(1 - q1(t))(mu1(t) - mu2(t)^2
+        sigmaI = sigmaI * sigmaI;
         mu1 = mu1next;
         mu2 = mu2next;
         if (sigmaI > sigmaT) {
-            t = i;
+            t = static_cast<ushort>(i);
             sigmaT = sigmaI;
         }
     }
-    std::cout << "t = " << t << std::endl;
     return t;
 }
 
