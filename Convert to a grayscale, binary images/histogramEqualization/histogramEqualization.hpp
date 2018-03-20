@@ -11,14 +11,12 @@
 
 #include <stdio.h>
 #include <string>
-#include "
+#include "binaryConversions.hpp"
 
-class histogramEqualization: luminanceConversion {
+class histogramEqualization: binaryConversions {
 public:
-    histogramEqualization(std::string filePaah); // конструктор загрузит изображение и запустит преобразования.
-    ~histogramEqualization(); // Деструктор освободит память.
     virtual void showCurrantStat(); // вывод результата.
-private:
+protectit:
     cv::Mat bHist; // матрица для гистограммы синего цвета.
     void plottingHistogram(); // построение гистограммы.
     void normalizationHistogram(); // нормализация гистограммы.

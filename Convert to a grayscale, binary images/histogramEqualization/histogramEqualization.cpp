@@ -41,21 +41,7 @@ void histogramEqualization::showCurrantStat() {
     destroyWindow("Histogram equalization"); // уничтожение окна.
 }
 
-histogramEqualization::~histogramEqualization() { 
-    image.deallocate(); // Освобождение памяти.
-}
-
-histogramEqualization::histogramEqualization(std::string filePaah) { 
-    image = imread(filePaah); // загрузка изображения.
-    conversionToGray();// приведение изображения к полутоновому.
-    plottingHistogram(); // построение гистограммы.
-    normalizationHistogram(); // нормализация гистограммы.
-    buildingStackedHistogram(); // построение гистограммы с накоплением.
-    uniformDistributionValues(); // равномерное распределение значений.
-    scalingChanges(); // масштабирование.
-}
-
-void histogramEqualization::uniformDistributionValues() { 
+void histogramEqualization::uniformDistributionValues() {
     for (int i = 0; i < image.rows; i++) {
         for (int j = 0; j < image.cols; j++) {
             image.at<Vec3b>(i, j)[0] = round(bHist.at<float>(image.at<Vec3b>(i, j)[0]) * 255);
