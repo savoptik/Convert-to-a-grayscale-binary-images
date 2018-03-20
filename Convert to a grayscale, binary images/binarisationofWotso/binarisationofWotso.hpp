@@ -19,7 +19,7 @@ public:
     ~binarisationofWotso();
     virtual void showCurrantStat();
     void conversionToBinaryOfVocoGlobale();
-    private;
+private:
     ushort findThreshold();
 };
 

@@ -10,8 +10,9 @@
 #include "grayScale.hpp"
 #include <string>
 #include "binarysationSetthreshold.hpp"
-using namespace std;
 #include "binarizationBand.hpp"
+#include "binarisationofWotso.hpp"
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png"; // путь к файлу.
@@ -25,5 +26,8 @@ int main(int argc, const char * argv[]) {
     bst2.showCurrentVersion(); // вывод изображения, бинаризованного с нижней границей.
     binarizationBand bb(filePath, 100, 200); // создание объекта.
     bb.showCurrentVersion(); // вывод изображения.
+    binarisationofWotso BWG(filePath); // создание объекта, запуск конструктора.
+    BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.
+    BWG.showCurrantStat(); // отображение.
     return 0;
 }
