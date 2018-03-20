@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Convert to a grayscale, binary images.xcodeproj">
+      location = "group:../Convert to a grayscale, binary images/histogramEqualization.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../Convert to a grayscale, binary images/histogramEqualization.hpp">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

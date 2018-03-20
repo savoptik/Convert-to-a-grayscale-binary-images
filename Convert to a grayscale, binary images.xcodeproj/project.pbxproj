@@ -54,6 +54,7 @@
 		FE206061205AE0750090CCAE /* binarizationBand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE20605F205AE0750090CCAE /* binarizationBand.cpp */; };
 		FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22A205974AB00879F74 /* binaryConversions.cpp */; };
 		FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */; };
+		FE8F6E3A2061121E001E46A5 /* histogramEqualization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE8F6E392061121D001E46A5 /* histogramEqualization.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,8 @@
 		FE2ED22B205974AB00879F74 /* binaryConversions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binaryConversions.hpp; sourceTree = "<group>"; };
 		FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binarysationSetthreshold.cpp; sourceTree = "<group>"; };
 		FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binarysationSetthreshold.hpp; sourceTree = "<group>"; };
+		FE8F6E382061121D001E46A5 /* histogramEqualization.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = histogramEqualization.hpp; sourceTree = "<group>"; };
+		FE8F6E392061121D001E46A5 /* histogramEqualization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = histogramEqualization.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
+				FE8F6E3B2061122C001E46A5 /* histogramEqualization */,
 				FE20605E205AE0060090CCAE /* binarizationBand */,
 				FE2ED234205A6B8200879F74 /*  binarysationSetthreshold */,
 				FE2ED236205A6C8600879F74 /* grayScale */,
@@ -290,6 +294,15 @@
 			path = grayScale;
 			sourceTree = "<group>";
 		};
+		FE8F6E3B2061122C001E46A5 /* histogramEqualization */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F6E392061121D001E46A5 /* histogramEqualization.cpp */,
+				FE8F6E382061121D001E46A5 /* histogramEqualization.hpp */,
+			);
+			path = histogramEqualization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8F6E3A2061121E001E46A5 /* histogramEqualization.cpp in Sources */,
 				FE068BCE2057E38C005D854A /* main.cpp in Sources */,
 				FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */,
 				FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */,
