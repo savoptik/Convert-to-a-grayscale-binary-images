@@ -18,11 +18,13 @@ binarisationofWotso::binarisationofWotso(std::string filePash) {
 }
 
 void binarisationofWotso::showCurrantStat() { 
-    <#code#>;
+    imshow("binarisation of Wotso", image); // вывод изображания
+    waitKey(); // ожидание нажатия клавиши.
+    destroyWindow("binarisation of Wotso"); // уничтожение окна.
 }
 
 binarisationofWotso::~binarisationofWotso() { 
-    image.delocate(); // освобождение памяти.
+    image.deallocate(); // освобождение памяти.
 }
 
 int binarisationofWotso::findThreshold() { 
