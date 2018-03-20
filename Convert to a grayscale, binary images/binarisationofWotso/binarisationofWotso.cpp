@@ -27,11 +27,12 @@ binarisationofWotso::~binarisationofWotso() {
     image.deallocate(); // освобождение памяти.
 }
 
-int binarisationofWotso::findThreshold() { 
+ushort binarisationofWotso::findThreshold() {
     <#code#>;
 }
 
 void binarisationofWotso::conversionToBinaryOfVocoGlobale() { 
-    <#code#>;
+    ushort Threshold = findThreshold(); // получение порога бинаризации.
+    conversionToBinaryUpBound(Threshold);
 }
 

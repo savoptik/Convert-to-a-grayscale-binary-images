@@ -11,16 +11,17 @@
 
 #include <stdio.h>
 #include "histogramEqualization.hpp"
+#include "binarysationSetthreshold.hpp"
 #include <string>
 
-class binarisationofWotso: histogramEqualization {
+class binarisationofWotso: histogramEqualization, binarysationSetthreshold {
 public:
     binarisationofWotso(std::string filePash);
     ~binarisationofWotso();
     virtual void showCurrantStat();
     void conversionToBinaryOfVocoGlobale();
     private;
-    int findThreshold();
+    ushort findThreshold();
 };
 
 #endif /* binarisationofWotso_hpp */
