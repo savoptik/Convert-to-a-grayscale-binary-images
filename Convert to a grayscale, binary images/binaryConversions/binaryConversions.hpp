@@ -19,6 +19,7 @@ public:
     
 protected:
     cv::Mat image; // хранилище изображения.
+    int max;
     void conversionTOGrayScale(); // метод преобразует изображение к полутоновому.
 };
 

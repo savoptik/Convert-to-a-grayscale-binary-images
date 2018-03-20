@@ -55,6 +55,7 @@
 		FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22A205974AB00879F74 /* binaryConversions.cpp */; };
 		FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE2ED22D20597B0700879F74 /* binarysationSetthreshold.cpp */; };
 		FE8F6E3A2061121E001E46A5 /* histogramEqualization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE8F6E392061121D001E46A5 /* histogramEqualization.cpp */; };
+		FE8F6E442061166F001E46A5 /* binarisationofWotso.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE8F6E422061166F001E46A5 /* binarisationofWotso.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,6 +125,8 @@
 		FE2ED22E20597B0700879F74 /* binarysationSetthreshold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binarysationSetthreshold.hpp; sourceTree = "<group>"; };
 		FE8F6E382061121D001E46A5 /* histogramEqualization.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = histogramEqualization.hpp; sourceTree = "<group>"; };
 		FE8F6E392061121D001E46A5 /* histogramEqualization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = histogramEqualization.cpp; sourceTree = "<group>"; };
+		FE8F6E422061166F001E46A5 /* binarisationofWotso.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binarisationofWotso.cpp; sourceTree = "<group>"; };
+		FE8F6E432061166F001E46A5 /* binarisationofWotso.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = binarisationofWotso.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				FE068BCD2057E38C005D854A /* main.cpp */,
+				FE8F6E4120611534001E46A5 /* binarisationofWotso */,
 				FE8F6E3B2061122C001E46A5 /* histogramEqualization */,
 				FE20605E205AE0060090CCAE /* binarizationBand */,
 				FE2ED234205A6B8200879F74 /*  binarysationSetthreshold */,
@@ -303,6 +307,15 @@
 			path = histogramEqualization;
 			sourceTree = "<group>";
 		};
+		FE8F6E4120611534001E46A5 /* binarisationofWotso */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F6E422061166F001E46A5 /* binarisationofWotso.cpp */,
+				FE8F6E432061166F001E46A5 /* binarisationofWotso.hpp */,
+			);
+			path = binarisationofWotso;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +375,7 @@
 			files = (
 				FE8F6E3A2061121E001E46A5 /* histogramEqualization.cpp in Sources */,
 				FE068BCE2057E38C005D854A /* main.cpp in Sources */,
+				FE8F6E442061166F001E46A5 /* binarisationofWotso.cpp in Sources */,
 				FE2ED22F20597B0700879F74 /* binarysationSetthreshold.cpp in Sources */,
 				FE2ED22C205974AB00879F74 /* binaryConversions.cpp in Sources */,
 				FE068BD62057E7AE005D854A /* grayScale.cpp in Sources */,

@@ -16,7 +16,7 @@
 class histogramEqualization: binaryConversions {
 public:
     virtual void showCurrantStat(); // вывод результата.
-protectit:
+protected:
     cv::Mat bHist; // матрица для гистограммы синего цвета.
     void plottingHistogram(); // построение гистограммы.
     void normalizationHistogram(); // нормализация гистограммы.
