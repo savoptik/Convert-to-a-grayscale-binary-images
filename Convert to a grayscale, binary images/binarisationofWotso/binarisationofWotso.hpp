@@ -15,12 +15,12 @@
 
 class binarisationofWotso: histogramEqualization {
 public:
-    binarisationofWotso(std::string filePash);
-    ~binarisationofWotso();
-    virtual void showCurrantStat();
-    void conversionToBinaryOfVocoGlobale();
+    binarisationofWotso(std::string filePash); // конструктор загрузит изображение, запустит приведение изображения к полутоновому, запустит построение гистограммы.
+    ~binarisationofWotso(); // деструктор освободит память.
+    virtual void showCurrantStat(); // вывод изображения.
+    void conversionToBinaryOfVocoGlobale(); // глобальная бинаризация Воцо
 private:
-    ushort findThreshold();
+    ushort findThreshold(); // метод вычисление порога.
 };
 
 #endif /* binarisationofWotso_hpp */

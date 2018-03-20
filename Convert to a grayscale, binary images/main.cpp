@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
     // бинаризация с диапазоном.
     binarizationBand bb(filePath, 100, 200); // создание объекта.
     bb.showCurrentVersion(); // вывод изображения.
-    Бинаризация Вотсо
+    // Бинаризация Вотсо
     // Глобальная.
     binarisationofWotso BWG(filePath); // создание объекта, запуск конструктора.
     BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.

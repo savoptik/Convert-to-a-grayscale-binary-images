@@ -29,8 +29,8 @@ binarisationofWotso::~binarisationofWotso() {
 }
 
 ushort binarisationofWotso::findThreshold() {
-    int t, sigmaT = 0;
-    float q=0, q1=0, mu, mu1 = 0, mu2 = 0, mu1next = 0, mu2next = 0;
+    ushort t = 0;
+    float q=0, q1=0, mu, mu1 = 0, mu2 = 0, mu1next = 0, mu2next = 0, sigmaT = 0;
     // соберём всю сумму.
     for (int i = 0; i < 255; i++) {
         q += bHist.at<float>(i);
@@ -38,10 +38,10 @@ ushort binarisationofWotso::findThreshold() {
     for (int i = 0; i < 255; i++) {
         q1 += + bHist.at<float>(i); // находим q1.
         int q2 = q - q1; // найдём q2.
-        mu = q1*mu1 + q2*mu2; // находим mu
-        mu1next = (q1 * mu1 + (i+1)*bHist.at<float>(i+1)) / (q1 + bHist.at<float>(i+1));
-        mu2next = (mu - (q1 + bHist.at<float>(i+1))*mu1next) / (1 - (q1 + bHist.at<float>(i+1)));
-        int sigmaI = q1 * (1 - q1) * (mu1 - mu2) * (mu1 - mu2);
+        mu = q1*mu1 + q2*mu2; // mu(t) = q1(t)*mu1(t) + q2(t)*mu2(t)
+        mu1next = (q1 * mu1 + (i+1)*bHist.at<float>(i+1)) / (q1 + bHist.at<float>(i+1)); // mu1(t+1) = (q1(t) * mu1(t) + (t+1)*p(t+1))/(q1(t+1))
+        mu2next = (mu - (q1 + bHist.at<float>(i+1))*mu1next) / (1 - (q1 + bHist.at<float>(i+1))); // mu2(t+1) = (mu(t) -q1(t+1)*mu1(t+1))/(1-q1(t+1))
+        int sigmaI = q1 * (1 - q1) * (mu1 - mu2) * (mu1 - mu2); // sigma^2 = q1(t)(1 - q1(t))(mu1(t) - mu2(t)^2
         mu1 = mu1next;
         mu2 = mu2next;
         if (sigmaI > sigmaT) {
@@ -54,6 +54,7 @@ ushort binarisationofWotso::findThreshold() {
 
 void binarisationofWotso::conversionToBinaryOfVocoGlobale() { 
     ushort Threshold = findThreshold(); // получение порога бинаризации.
+    // выполнение бинаризации.
     for (int i = 0; i < image.rows; i++) {
         for (int j = 0; j < image.cols; j++) {
             image.at<Vec3b>(i, j)[0] = image.at<Vec3b>(i, j)[0] > Threshold? 255: 0;
@@ -62,4 +63,3 @@ void binarisationofWotso::conversionToBinaryOfVocoGlobale() {
         }
     }
 }
-
