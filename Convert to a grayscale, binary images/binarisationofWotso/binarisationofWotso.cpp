@@ -13,16 +13,16 @@
 using namespace cv;
 
 binarisationofWotso::binarisationofWotso(std::string filePash) { 
-    <#code#>;
+    image = imread(filePash); // загрузка изображения.
+    conversionTOGrayScale(); // преведение к полутоновому.
 }
 
 void binarisationofWotso::showCurrantStat() { 
     <#code#>;
 }
 
-
 binarisationofWotso::~binarisationofWotso() { 
-    <#code#>;
+    image.delocate(); // освобождение памяти.
 }
 
 int binarisationofWotso::findThreshold() { 

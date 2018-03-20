@@ -18,9 +18,9 @@ public:
     binarisationofWotso(std::string filePash);
     ~binarisationofWotso();
     virtual void showCurrantStat();
+    void conversionToBinaryOfVocoGlobale();
     private;
     int findThreshold();
-    void conversionToBinaryOfVocoGlobale();
 };
 
 #endif /* binarisationofWotso_hpp */
