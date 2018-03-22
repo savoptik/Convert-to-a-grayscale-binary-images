@@ -13,8 +13,8 @@
 #include "histogramEqualization.hpp"
 #include <string>
 
-class binarisationofWotso: histogramEqualization {
-public:
+class binarisationofWotso: public histogramEqualization {
+protected:
     binarisationofWotso(std::string filePash); // конструктор загрузит изображение, запустит приведение изображения к полутоновому, запустит построение гистограммы.
     binarisationofWotso(cv::Mat& exImage); // альтернативный конструктор.
     binarisationofWotso() {}; // Конструктор без переменных для классов наследников.

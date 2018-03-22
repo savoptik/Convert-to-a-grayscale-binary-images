@@ -10,6 +10,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
+#include <cmath>
 using namespace cv;
 
 binarisationOfOtsaLocal::binarisationOfOtsaLocal(std::string filepash, const int SL) {
@@ -31,7 +32,22 @@ void binarisationOfOtsaLocal::showCurrentVersion() {
 }
 
 void binarisationOfOtsaLocal::cutImageIntoSquares() { 
-    <#code#>;
+    for (int i = 0; i < image.rows; i+=scaleLocalization) { // едем по строкам с шагом в длинну квадратика.
+        for (int j = 0; j < image.cols; j+=scaleLocalization) { // Едем по столбцам изображения с шакгом в размер квадратика.
+            Mat timeMatrix(scaleLocalization, scaleLocalization, Vec3b); // временная матрица.
+            int ri = 0, cj = 0; // бегунки для второй матрицы.
+            for (int r = i; r < i + scaleLocalization; r++) { // едем по строчкам квадратика
+                cj = 0; // обнуляем щётчик столбиков временной матрицы.
+                for (int c = j; c < j + scaleLocalization; c++) { // едем по столбикам квадратика.
+                    timeMatrix.at<Vec3b>(ri, cj) = image.at<Vec3b>(r, c); // переписываем пиксель
+                    cj++; // сдвигаем пишущий индекс.
+                }
+                ri++; // сдвигаем строчный пишущий индекс.
+            }
+            Squares.push_back(timeMatrix); // засовываем клеточку в вектор.
+            numberOfSquaresInRow = i == 0? numberOfSquaresInRow++; // счетаем количество квадратиков в строке.
+        }
+    }
 }
 
 void binarisationOfOtsaLocal::collectImageOfSquares() { 
