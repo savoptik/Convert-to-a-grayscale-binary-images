@@ -26,19 +26,19 @@ binarisationOfOtsaLocal::binarisationOfOtsaLocal(std::string filepash, const int
 }
 
 void binarisationOfOtsaLocal::showCurrentVersion() { 
-    imshow("Binarisation of Otso local", resultImage); // вывод результирующего изображения.
+    imshow("Binarisation of Otso local", image); // вывод результирующего изображения.
     waitKey(); // ожидание нажатия клавиши.
     destroyWindow("Binarisation of Otso local"); // уничтожение окна.
 }
 
-void binarisationOfOtsaLocal::cutImageIntoSquares() { 
+void binarisationOfOtsaLocal::cutImageIntoSquares() {
+    Mat timeMatrix(scaleLocalization, scaleLocalization, Vec3b); // временная матрица.
     for (int i = 0; i < image.rows; i+=scaleLocalization) { // едем по строкам с шагом в длинну квадратика.
         for (int j = 0; j < image.cols; j+=scaleLocalization) { // Едем по столбцам изображения с шакгом в размер квадратика.
-            Mat timeMatrix(scaleLocalization, scaleLocalization, Vec3b); // временная матрица.
             int ri = 0, cj = 0; // бегунки для второй матрицы.
-            for (int r = i; r < i + scaleLocalization; r++) { // едем по строчкам квадратика
+            for (int r = i; ((r < i + scaleLocalization) && (r < image.rows)); r++) { // едем по строчкам квадратика
                 cj = 0; // обнуляем щётчик столбиков временной матрицы.
-                for (int c = j; c < j + scaleLocalization; c++) { // едем по столбикам квадратика.
+                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); c++) { // едем по столбикам квадратика.
                     timeMatrix.at<Vec3b>(ri, cj) = image.at<Vec3b>(r, c); // переписываем пиксель
                     cj++; // сдвигаем пишущий индекс.
                 }
@@ -48,6 +48,7 @@ void binarisationOfOtsaLocal::cutImageIntoSquares() {
             numberOfSquaresInRow = i == 0? numberOfSquaresInRow++; // счетаем количество квадратиков в строке.
         }
     }
+    timeMatrix.deallocate(); // уничтожаем временную матрицу, она отработала и больше не нужна.
 }
 
 void binarisationOfOtsaLocal::collectImageOfSquares() { 

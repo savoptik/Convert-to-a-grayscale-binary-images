@@ -21,7 +21,6 @@ public:
 private:
     int scaleLocalization; // размер квадратиков.
     int numberOfSquaresInRow; // Количество квадратиков в строке.
-    cv::Mat resultImage; // результирующее изображение.
     std::vector<cv::Mat> Squares; // вектор хранит все квадратики.
     void cutImageIntoSquares(); // метод нарезает изображение на квадратики.
     void collectImageOfSquares(); // Метод собирает изображение из нарезанных квадратиков.
