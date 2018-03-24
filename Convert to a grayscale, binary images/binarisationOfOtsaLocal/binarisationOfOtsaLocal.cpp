@@ -51,6 +51,21 @@ void binarisationOfOtsaLocal::cutImageIntoSquares() {
     timeMatrix.deallocate(); // уничтожаем временную матрицу, она отработала и больше не нужна.
 }
 
-void binarisationOfOtsaLocal::collectImageOfSquares() { 
-    <#code#>;
+void binarisationOfOtsaLocal::collectImageOfSquares() {
+    int indexSVector = 0; // бегунок по вектору квадратиков.
+    for (int i = 0; i < image.rows; i+=scaleLocalization) { // проход по строкам результирующего изображения.
+        for (int j = 0; j < image.cols; j+=scaleLocalization) { // проход по столбцам результирующего изображения.
+            int ri = 0, cj = 0; // вспомогательные бегунки.
+            for (int r = i; ((r < i + scaleLocalization) && (r < image.rows)); r++) { // проход по строкам квадратика изображения.
+                cj = 0; // обнуление бегунка столбцов записуемого квадратика.
+                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); j++) { // проход по столбцам квадратика изображения.
+                    image.at<Vec3b>(r, c) = Squares[indexSVector].at<Vec3b>(ri, cj); // переписывание пикселя
+                    cj++; // прирощение бегунка столбцов записуемого квадратика.
+                }
+                ri++; // прирощение бегунка строк записуемого квадратика.
+            }
+            indexSVector++; // прирощение индекса вектора с квадратиками.
+        }
+    }
+    Squares.deallocate(); // уничтожение вектора с квадратиками.
 }

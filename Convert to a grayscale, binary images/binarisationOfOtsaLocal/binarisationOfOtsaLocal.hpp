@@ -13,7 +13,7 @@
 #include "binarisationofWotso.hpp"
 #include <vector>
 
-class binarisationOfOtsaLocal: binarisationofWotso {
+class binarisationOfOtsaLocal: binaryConversions {
 public:
     binarisationOfOtsaLocal(std::string filepash, const int SL); // конструктор загружает изображение и задаёт масштаб локальной бинаризации.
     binarisationOfOtsaLocal() {} // пустой конструктор.
