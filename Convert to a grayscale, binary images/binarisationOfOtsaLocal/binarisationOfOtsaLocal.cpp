@@ -58,7 +58,7 @@ void binarisationOfOtsaLocal::collectImageOfSquares() {
             int ri = 0, cj = 0; // вспомогательные бегунки.
             for (int r = i; ((r < i + scaleLocalization) && (r < image.rows)); r++) { // проход по строкам квадратика изображения.
                 cj = 0; // обнуление бегунка столбцов записуемого квадратика.
-                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); j++) { // проход по столбцам квадратика изображения.
+                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); c++) { // проход по столбцам квадратика изображения.
                     image.at<Vec3b>(r, c) = Squares[indexSVector].at<Vec3b>(ri, cj); // переписывание пикселя
                     cj++; // прирощение бегунка столбцов записуемого квадратика.
                 }
