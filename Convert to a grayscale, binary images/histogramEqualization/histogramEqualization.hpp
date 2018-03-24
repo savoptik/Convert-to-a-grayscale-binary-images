@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "binaryConversions.hpp"
 
-class histogramEqualization: protected binaryConversions {
+class histogramEqualization: public binaryConversions {
 public:
     virtual void showCurrantStat(); // вывод результата.
 protected:

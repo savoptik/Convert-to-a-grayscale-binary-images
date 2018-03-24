@@ -32,7 +32,7 @@ void binarisationOfOtsaLocal::showCurrentVersion() {
 }
 
 void binarisationOfOtsaLocal::cutImageIntoSquares() {
-    Mat timeMatrix(scaleLocalization, scaleLocalization, Vec3b); // временная матрица.
+    Mat timeMatrix(scaleLocalization, scaleLocalization, CV_8UC3, Scalar(126, 0, 255)); // временная матрица.
     for (int i = 0; i < image.rows; i+=scaleLocalization) { // едем по строкам с шагом в длинну квадратика.
         for (int j = 0; j < image.cols; j+=scaleLocalization) { // Едем по столбцам изображения с шакгом в размер квадратика.
             int ri = 0, cj = 0; // бегунки для второй матрицы.
@@ -45,7 +45,7 @@ void binarisationOfOtsaLocal::cutImageIntoSquares() {
                 ri++; // сдвигаем строчный пишущий индекс.
             }
             Squares.push_back(timeMatrix); // засовываем клеточку в вектор.
-            numberOfSquaresInRow = i == 0? numberOfSquaresInRow++; // счетаем количество квадратиков в строке.
+            numberOfSquaresInRow = i == 0? numberOfSquaresInRow++: numberOfSquaresInRow; // счетаем количество квадратиков в строке.
         }
     }
     timeMatrix.deallocate(); // уничтожаем временную матрицу, она отработала и больше не нужна.
@@ -67,5 +67,5 @@ void binarisationOfOtsaLocal::collectImageOfSquares() {
             indexSVector++; // прирощение индекса вектора с квадратиками.
         }
     }
-    Squares.deallocate(); // уничтожение вектора с квадратиками.
+    Squares.clear();
 }

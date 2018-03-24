@@ -12,6 +12,7 @@
 #include "binarysationSetthreshold.hpp"
 #include "binarizationBand.hpp"
 #include "binarisationofWotso.hpp"
+#include "binarisationOfOtsaLocal.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -32,5 +33,7 @@ int main(int argc, const char * argv[]) {
     binarisationofWotso BWG(filePath); // создание объекта, запуск конструктора.
     BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.
     BWG.showCurrantStat(); // отображение.
+    binarisationOfOtsaLocal BOL(filePath, 10000); // инициализация класса.
+    BOL.showCurrentVersion(); // вывод изображения.
     return 0;
 }
