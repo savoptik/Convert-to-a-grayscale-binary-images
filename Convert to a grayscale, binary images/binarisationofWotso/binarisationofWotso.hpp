@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "histogramEqualization.hpp"
-#include <string>
 
 class binarisationofWotso: public histogramEqualization {
 public:
@@ -21,7 +20,6 @@ public:
     ~binarisationofWotso(); // деструктор освободит память.
     virtual void showCurrantStat(); // вывод изображения.
     void conversionToBinaryOfVocoGlobale(); // глобальная бинаризация Оцо
-    void exportToDisk(std::string filePash); // метод записывает полученное изображение на диск.
 protected:
     ushort findThreshold(); // метод вычисление порога.
 };

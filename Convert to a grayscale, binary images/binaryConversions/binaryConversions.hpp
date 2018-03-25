@@ -11,14 +11,15 @@
 
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
+#include <string>
 
 class binaryConversions {
 public:
     virtual void showCurrentVersion() {} // отображатель текущего состояния картинки.
     cv::Mat& getImageMatrix(){return image;} // просто возврат ссылки на картинку. мало ли что?
+    void exportToDisk(std::string filePash); // метод записывает полученное изображение на диск.
 protected:
     cv::Mat image; // хранилище изображения.
-    int max;
     void conversionTOGrayScale(); // метод преобразует изображение к полутоновому.
 };
 

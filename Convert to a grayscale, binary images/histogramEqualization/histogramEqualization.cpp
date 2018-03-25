@@ -45,11 +45,8 @@ void histogramEqualization::uniformDistributionValues() {
     for (int i = 0; i < image.rows; i++) {
         for (int j = 0; j < image.cols; j++) {
             image.at<Vec3b>(i, j)[0] = round(bHist.at<float>(image.at<Vec3b>(i, j)[0]) * 255);
-            max = image.at<Vec3b>(i, j)[0] > max? image.at<Vec3b>(i, j)[0]: max; // поиск максимума для мосштабирования.
             image.at<Vec3b>(i, j)[1] = round(bHist.at<float>(image.at<Vec3b>(i, j)[1]) * 255);
-            max = image.at<Vec3b>(i, j)[1] > max? image.at<Vec3b>(i, j)[1]: max;
             image.at<Vec3b>(i, j)[2] = round(bHist.at<float>(image.at<Vec3b>(i, j)[2]) * 255);
-            max = image.at<Vec3b>(i, j)[2] > max? image.at<Vec3b>(i, j)[2]: max;
         }
     }
 }

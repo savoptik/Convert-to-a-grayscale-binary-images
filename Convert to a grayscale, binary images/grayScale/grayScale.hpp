@@ -11,7 +11,6 @@
 
 #include "binaryConversions.hpp"
 #include <stdio.h>
-#include <string>
 
 class grayScale: binaryConversions {
 public:

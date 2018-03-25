@@ -69,10 +69,6 @@ void binarisationofWotso::conversionToBinaryOfVocoGlobale() {
     }
 }
 
-void binarisationofWotso::exportToDisk(std::string filePash) { 
-    imwrite(filePash, image); // запись полученного изображения на диск по заданному пути.
-}
-
 binarisationofWotso::binarisationofWotso(cv::Mat& exImage) { 
     image = exImage; // получение изображения.
     conversionTOGrayScale(); // преведение к полутоновому.
