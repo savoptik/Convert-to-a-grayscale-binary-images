@@ -19,17 +19,23 @@ void hierarchicalBinarizationOtsu::showCurrentVersion() {
 }
 
 hierarchicalBinarizationOtsu::~hierarchicalBinarizationOtsu() { 
+    image.deallocate();
+    masks.clear();
+}
+
+void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask) {
     <#code#>;
 }
 
-void hierarchicalBinarizationOtsu::plotingHist() { 
+cv::Mat hierarchicalBinarizationOtsu::generaitMask(std::vector<int> &hist) { 
     <#code#>;
 }
 
-void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask) { 
+std::vector<int> hierarchicalBinarizationOtsu::plotingHistUnit(cv::Mat &mask) { 
     <#code#>;
 }
 
-hierarchicalBinarizationOtsu::hierarchicalBinarizationOtsu(int, int iterations) { 
+std::vector<int> hierarchicalBinarizationOtsu::plotingHistZero(cv::Mat &mask) { 
     <#code#>;
 }
+

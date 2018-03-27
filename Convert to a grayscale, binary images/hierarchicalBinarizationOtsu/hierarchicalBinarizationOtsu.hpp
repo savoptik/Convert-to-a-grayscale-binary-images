@@ -16,16 +16,17 @@
 
 class hierarchicalBinarizationOtsu: binaryConversions {
 public:
-    hierarchicalBinarizationOtsu(std:: filepash, int iterations);
-    ~hierarchicalBinarizationOtsu()
-    virtual void showCurrentVersion();
+    hierarchicalBinarizationOtsu(std:: filepash, int iterations); // конструктор загрузит изображение, запишет количество итераций и запустит преобразования.
+    ~hierarchicalBinarizationOtsu(); // деструктор освободит память.
+    virtual void showCurrentVersion(); // вывод изображения.
 private:
     cv::Mat maskBO; // маска бинаризованная глобальным Отсу.
-    std::vector<c> masks; // вектор хранит маски.
-    std::vector<int> histogram; // ручная гистограмма.
-    int numIterations;
-    void plotingHist();
-    void binarisationHO(cv::Mat& mask);
+    std::vector<cv::Mat> masks; // вектор хранит маски.
+    int numIterations; // количество итераций.
+    std::vector<int> plotingHistZero(cv::Mat& mask); // построение гистограммы по маске.
+    std::vector<int> plotingHistUnit(cv::Mat& mask); // построение гистограммы по маске.
+    void binarisationHO(cv::Mat& mask); // выполнение иерархической бинаризации.
+    cv::Mat generaitMask(std::vector<int>& hist); // создание новой маски по гистограмме.
 };
 
 #endif /* hierarchicalBinarizationOtsu_hpp */
