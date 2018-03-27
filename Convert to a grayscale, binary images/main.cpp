@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
     BWG.conversionToBinaryOfVocoGlobale(); // выполнение глабальной бинаризации.
     BWG.showCurrantStat(); // отображение.
     // бинаризация Отсо локальная.
-    binarisationOfOtsaLocal BOL(filePath, 10000); // инициализация класса.
+    binarisationOfOtsaLocal BOL(filePath, 8); // инициализация класса.
     BOL.showCurrentVersion(); // вывод изображения.
     return 0;
 }
