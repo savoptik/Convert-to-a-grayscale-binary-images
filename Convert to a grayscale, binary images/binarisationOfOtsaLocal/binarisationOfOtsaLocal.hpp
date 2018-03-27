@@ -19,7 +19,7 @@ public:
     binarisationOfOtsaLocal() {} // пустой конструктор.
     virtual void showCurrentVersion(); // вывод изображения.
 private:
-    int scaleLocalization; // размер квадратиков.
+    int scaleLocalizationR, scaleLocalizationRC; // размер квадратиков.
     int numberOfSquaresInRow; // Количество квадратиков в строке.
     std::vector<cv::Mat> Squares; // вектор хранит все квадратики.
     void cutImageIntoSquares(); // метод нарезает изображение на квадратики.

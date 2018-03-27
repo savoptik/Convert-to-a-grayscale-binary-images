@@ -15,7 +15,8 @@ using namespace cv;
 
 binarisationOfOtsaLocal::binarisationOfOtsaLocal(std::string filepash, const int SL) {
     image = imread(filepash); // загрузка изображения.
-    scaleLocalization = SL; // записываем размер квадратиков.
+    scaleLocalizationR = image.rows / SL; // записываем размер квадратиков.
+    scaleLocalizationRC = image.cols / SL;
     cutImageIntoSquares(); // режем изображение на квадратики.
     for (int i = 0; i < Squares.size(); i++) { // идём по массиву квадратиков.
         binarisationofWotso bo(Squares[i]); // готовимся к преобразованию квадратика к Отсу
@@ -32,13 +33,13 @@ void binarisationOfOtsaLocal::showCurrentVersion() {
 }
 
 void binarisationOfOtsaLocal::cutImageIntoSquares() {
-    Mat timeMatrix(scaleLocalization, scaleLocalization, CV_8UC3, Scalar(126, 0, 255)); // временная матрица.
-    for (int i = 0; i < image.rows; i+=scaleLocalization) { // едем по строкам с шагом в длинну квадратика.
-        for (int j = 0; j < image.cols; j+=scaleLocalization) { // Едем по столбцам изображения с шакгом в размер квадратика.
+    for (int i = 0; i < image.rows; i+=scaleLocalizationR) { // едем по строкам с шагом в длинну квадратика.
+        for (int j = 0; j < image.cols; j+=scaleLocalizationRC) { // Едем по столбцам изображения с шакгом в размер квадратика.
+            Mat timeMatrix(scaleLocalizationR, scaleLocalizationRC, CV_8UC3, Scalar(126, 0, 255)); // временная матрица.
             int ri = 0, cj = 0; // бегунки для второй матрицы.
-            for (int r = i; ((r < i + scaleLocalization) && (r < image.rows)); r++) { // едем по строчкам квадратика
+            for (int r = i; ((r < i + scaleLocalizationR) && (r < image.rows)); r++) { // едем по строчкам квадратика
                 cj = 0; // обнуляем щётчик столбиков временной матрицы.
-                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); c++) { // едем по столбикам квадратика.
+                for (int c = j; ((c < j + scaleLocalizationRC) && (c < image.cols)); c++) { // едем по столбикам квадратика.
                     timeMatrix.at<Vec3b>(ri, cj) = image.at<Vec3b>(r, c); // переписываем пиксель
                     cj++; // сдвигаем пишущий индекс.
                 }
@@ -46,19 +47,19 @@ void binarisationOfOtsaLocal::cutImageIntoSquares() {
             }
             Squares.push_back(timeMatrix); // засовываем клеточку в вектор.
             numberOfSquaresInRow = i == 0? numberOfSquaresInRow++: numberOfSquaresInRow; // счетаем количество квадратиков в строке.
+            timeMatrix.deallocate(); // уничтожаем временную матрицу, она отработала и больше не нужна.
         }
     }
-    timeMatrix.deallocate(); // уничтожаем временную матрицу, она отработала и больше не нужна.
 }
 
 void binarisationOfOtsaLocal::collectImageOfSquares() {
     int indexSVector = 0; // бегунок по вектору квадратиков.
-    for (int i = 0; i < image.rows; i+=scaleLocalization) { // проход по строкам результирующего изображения.
-        for (int j = 0; j < image.cols; j+=scaleLocalization) { // проход по столбцам результирующего изображения.
+    for (int i = 0; i < image.rows; i+=scaleLocalizationR) { // проход по строкам результирующего изображения.
+        for (int j = 0; j < image.cols; j+=scaleLocalizationRC) { // проход по столбцам результирующего изображения.
             int ri = 0, cj = 0; // вспомогательные бегунки.
-            for (int r = i; ((r < i + scaleLocalization) && (r < image.rows)); r++) { // проход по строкам квадратика изображения.
+            for (int r = i; ((r < i + scaleLocalizationR) && (r < image.rows)); r++) { // проход по строкам квадратика изображения.
                 cj = 0; // обнуление бегунка столбцов записуемого квадратика.
-                for (int c = j; ((c < j + scaleLocalization) && (c < image.cols)); c++) { // проход по столбцам квадратика изображения.
+                for (int c = j; ((c < j + scaleLocalizationRC) && (c < image.cols)); c++) { // проход по столбцам квадратика изображения.
                     image.at<Vec3b>(r, c) = Squares[indexSVector].at<Vec3b>(ri, cj); // переписывание пикселя
                     cj++; // прирощение бегунка столбцов записуемого квадратика.
                 }
