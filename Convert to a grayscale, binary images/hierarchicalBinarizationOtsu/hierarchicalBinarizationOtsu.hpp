@@ -10,11 +10,22 @@
 #define hierarchicalBinarizationOtsu_hpp
 
 #include <stdio.h>
+#include <vector>
 #include "binaryConversions.hpp"
+#include <map>
 
 class hierarchicalBinarizationOtsu: binaryConversions {
 public:
+    hierarchicalBinarizationOtsu(std:: filepash, int iterations);
+    ~hierarchicalBinarizationOtsu()
     virtual void showCurrentVersion();
+private:
+    cv::Mat maskBO; // маска бинаризованная глобальным Отсу.
+    std::vector<c> masks; // вектор хранит маски.
+    std::vector<int> histogram; // ручная гистограмма.
+    int numIterations;
+    void plotingHist();
+    void binarisationHO(cv::Mat& mask);
 };
 
 #endif /* hierarchicalBinarizationOtsu_hpp */

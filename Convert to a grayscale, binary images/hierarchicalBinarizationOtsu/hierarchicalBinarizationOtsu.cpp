@@ -12,9 +12,24 @@
 #include <opencv2/imgcodecs.hpp>
 using namespace cv;
 
-
 void hierarchicalBinarizationOtsu::showCurrentVersion() { 
     imshow("Hierarchical binarization Otsu", image);
     waitKey();
     destroyWindow("Hierarchical binarization Otsu");
+}
+
+hierarchicalBinarizationOtsu::~hierarchicalBinarizationOtsu() { 
+    <#code#>;
+}
+
+void hierarchicalBinarizationOtsu::plotingHist() { 
+    <#code#>;
+}
+
+void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask) { 
+    <#code#>;
+}
+
+hierarchicalBinarizationOtsu::hierarchicalBinarizationOtsu(int, int iterations) { 
+    <#code#>;
 }
