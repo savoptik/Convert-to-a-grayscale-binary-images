@@ -23,7 +23,7 @@ hierarchicalBinarizationOtsu::~hierarchicalBinarizationOtsu() {
     masks.clear();
 }
 
-std::vector<int> hierarchicalBinarizationOtsu::plotingHistZero(cv::Mat &mask, int activPiks) { 
+std::vector<int> hierarchicalBinarizationOtsu::plotingHist(cv::Mat &mask, int activPiks) {
     std::vector<int> hist(256); // Гистограма
     for (int i = 0; i < image.rows; i++) {
         for (int j =0; j < image.cols; j++) {
@@ -75,6 +75,17 @@ cv::Mat hierarchicalBinarizationOtsu::generaitMask(ushort threshold) {
 }
 
 void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask, int numIt) { 
-    <#code#>
+    std::vector<int> histNull = plotingHist(mask, 0); // построение гистограммы при активных нулях.
+    std::vector<int> histUnit = plotingHist(mask, 255); // построение гистограммы для области активных единиц.
+    ushort tNul = findThreshold(histNull); // поиск порога для бинаризации области активных нулей.
+    ushort tUnit = findThreshold(histUnit); // поиск порога для бинаризации области активных единиц.
+    Mat maskNul = generaitMask(tNul); // генерация маски.
+    Mat maskUnit = generaitMask(tUnit);
+    if ((numIt-1) != 0) { // Если количество доступных итераций позволяет
+        binarisationHO(maskNul, numIt-1); // рекурсивно вызываем этот же метод с нулевой маской и уменьшеным количеством итераций.
+        binarisationHO(maskUnit, numIt-1); // вызываем тот же метод с активными единицами и уменьшеным количеством итераций.
+    } else { // иначе значит что перамида рекурсии дошла до дна, и можно собирать маски с нижнего уровня.
+        masks.push_back(maskNul);
+        masks.push_back(maskUnit);
+    }
 }
-

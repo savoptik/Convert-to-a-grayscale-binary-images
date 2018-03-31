@@ -22,8 +22,7 @@ public:
 private:
     cv::Mat maskBO; // маска бинаризованная глобальным Отсу.
     std::vector<cv::Mat> masks; // вектор хранит маски.
-    std::vector<int> plotingHistZero(cv::Mat& mask, int activPiks); // построение гистограммы по маске.
-    std::vector<int> plotingHistUnit(cv::Mat& mask); // построение гистограммы по маске.
+    std::vector<int> plotingHist(cv::Mat& mask, int activPiks); // построение гистограммы по маске.
     void binarisationHO(cv::Mat& mask, int numIt); // выполнение иерархической бинаризации.
     cv::Mat generaitMask(ushort threshold); // создание новой маски по гистограмме.
     ushort findThreshold(std::vector<int>& hist); // вычисление порога.
