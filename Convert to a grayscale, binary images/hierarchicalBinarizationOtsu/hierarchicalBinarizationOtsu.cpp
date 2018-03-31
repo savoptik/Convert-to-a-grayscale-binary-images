@@ -105,3 +105,23 @@ void hierarchicalBinarizationOtsu::imageAssembly() {
         imageAssemblyUnit(masks[i+1]); // собираем маску единиц.
     }
 }
+
+void hierarchicalBinarizationOtsu::imageAssemblyNull(cv::Mat nullMask) { 
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            image.at<Vec3b>(i, j)[0] = nullMask.at<Vec3b>(i, j)[0] == 0? 0: image.at<Vec3b>(i, j)[0];
+            image.at<Vec3b>(i, j)[1] = nullMask.at<Vec3b>(i, j)[1] == 0? 0: image.at<Vec3b>(i, j)[1];
+            image.at<Vec3b>(i, j)[2] = nullMask.at<Vec3b>(i, j)[2] == 0? 0: image.at<Vec3b>(i, j)[2];
+        }
+    }
+}
+
+void hierarchicalBinarizationOtsu::imageAssemblyUnit(cv::Mat unitMask) { 
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            image.at<Vec3b>(i, j)[0] = unitMask.at<Vec3b>(i, j)[0] == 255? 255: image.at<Vec3b>(i, j)[0];
+            image.at<Vec3b>(i, j)[1] = unitMask.at<Vec3b>(i, j)[1] == 255? 255: image.at<Vec3b>(i, j)[1];
+            image.at<Vec3b>(i, j)[2] = unitMask.at<Vec3b>(i, j)[2] == 255? 255: image.at<Vec3b>(i, j)[2];
+        }
+    }
+}
