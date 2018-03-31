@@ -23,7 +23,7 @@ private:
     cv::Mat maskBO; // маска бинаризованная глобальным Отсу.
     std::vector<cv::Mat> masks; // вектор хранит маски.
     int numIterations; // количество итераций.
-    std::vector<int> plotingHistZero(cv::Mat& mask); // построение гистограммы по маске.
+    std::vector<int> plotingHistZero(cv::Mat& mask, int activPiks); // построение гистограммы по маске.
     std::vector<int> plotingHistUnit(cv::Mat& mask); // построение гистограммы по маске.
     void binarisationHO(cv::Mat& mask); // выполнение иерархической бинаризации.
     cv::Mat generaitMask(std::vector<int>& hist); // создание новой маски по гистограмме.

@@ -23,19 +23,14 @@ hierarchicalBinarizationOtsu::~hierarchicalBinarizationOtsu() {
     masks.clear();
 }
 
-void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask) {
-    <#code#>;
-}
-
-cv::Mat hierarchicalBinarizationOtsu::generaitMask(std::vector<int> &hist) { 
-    <#code#>;
-}
-
-std::vector<int> hierarchicalBinarizationOtsu::plotingHistUnit(cv::Mat &mask) { 
-    <#code#>;
-}
-
-std::vector<int> hierarchicalBinarizationOtsu::plotingHistZero(cv::Mat &mask) { 
-    <#code#>;
+std::vector<int> hierarchicalBinarizationOtsu::plotingHistZero(cv::Mat &mask, int activPiks) { 
+    std::vector<int> hist(256); // Гистограма
+    for (int i = 0; i < image.rows; i++) {
+        for (int j =0; j < image.cols; j++) {
+            if (mask.at<Vec3b>(i, j)[0] == activPiks) {
+                hist[image.at<Vec3b>(i, j)[0]]++;
+            }
+        }
+    }
 }
 
