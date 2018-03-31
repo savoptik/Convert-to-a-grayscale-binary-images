@@ -26,7 +26,8 @@ private:
     std::vector<int> plotingHistZero(cv::Mat& mask, int activPiks); // построение гистограммы по маске.
     std::vector<int> plotingHistUnit(cv::Mat& mask); // построение гистограммы по маске.
     void binarisationHO(cv::Mat& mask); // выполнение иерархической бинаризации.
-    cv::Mat generaitMask(std::vector<int>& hist); // создание новой маски по гистограмме.
+    cv::Mat generaitMask(std::vector<int>& hist, int activPiksel); // создание новой маски по гистограмме.
+    ushort findThreshold(std::vector<int> hist); // вычисление порога.
 };
 
 #endif /* hierarchicalBinarizationOtsu_hpp */
