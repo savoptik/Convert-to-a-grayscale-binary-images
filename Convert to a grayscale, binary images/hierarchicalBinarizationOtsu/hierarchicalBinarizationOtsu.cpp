@@ -10,6 +10,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
+#include "binarisationofWotso.hpp"
 using namespace cv;
 
 void hierarchicalBinarizationOtsu::showCurrentVersion() { 
@@ -19,8 +20,8 @@ void hierarchicalBinarizationOtsu::showCurrentVersion() {
 }
 
 hierarchicalBinarizationOtsu::~hierarchicalBinarizationOtsu() { 
-    image.deallocate();
-    masks.clear();
+    image.deallocate(); // Уничтожение изображения.
+    masks.clear(); // уничтожение вектора масок.
 }
 
 std::vector<int> hierarchicalBinarizationOtsu::plotingHist(cv::Mat &mask, int activPiks) {
@@ -88,4 +89,12 @@ void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask, int numIt) {
         masks.push_back(maskNul);
         masks.push_back(maskUnit);
     }
+}
+
+hierarchicalBinarizationOtsu::hierarchicalBinarizationOtsu(std::string filepash, int iterations) { 
+    image = imread(filepash); // чтение файла.
+    conversionTOGrayScale(); // приведение изображение к полутоновому.
+    binarisationofWotso globalMask(image); // создание маски.
+    binarisationHO(globalMask.getImageMatrix(), iterations); // запуск рекурсивного создания масок.
+    imageAssembly(); // сборка изображения из масок.
 }
