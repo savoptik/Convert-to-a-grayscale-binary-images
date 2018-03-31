@@ -27,14 +27,14 @@ std::vector<int> hierarchicalBinarizationOtsu::plotingHistZero(cv::Mat &mask, in
     std::vector<int> hist(256); // Гистограма
     for (int i = 0; i < image.rows; i++) {
         for (int j =0; j < image.cols; j++) {
-            if (mask.at<Vec3b>(i, j)[0] == activPiks) {
-                hist[image.at<Vec3b>(i, j)[0]]++;
+            if (mask.at<Vec3b>(i, j)[0] == activPiks) { // Если пиксель относится к интересующей облости
+                hist[image.at<Vec3b>(i, j)[0]]++; // строим гистограмму.
             }
         }
     }
 }
 
-ushort hierarchicalBinarizationOtsu::findThreshold(std::vector<int> hist) { 
+ushort hierarchicalBinarizationOtsu::findThreshold(std::vector<int>& hist) {
     ushort t = 0;
     double q = 0.0, q1 = 0.0, q2 = 0.0, mu = 0.0, mu1 = 0.0, mu2 = 0.0, mu1next = 0.0, mu2next = 0.0, sigmaT = 0.0;
     // соберём всю сумму.
@@ -61,4 +61,15 @@ ushort hierarchicalBinarizationOtsu::findThreshold(std::vector<int> hist) {
         }
     }
     return t;
+}
+
+cv::Mat hierarchicalBinarizationOtsu::generaitMask(ushort threshold) { 
+    auto mask = image; // Маска.
+    for (int i = 0; i < mask.rows; i++) {
+        for (int j = 0; j < mask.cols; j++) {
+            mask.at<Vec3b>(i, j)[0] = mask.at<Vec3b>(i, j)[0] > threshold? 255: 0;
+            mask.at<Vec3b>(i, j)[1] = mask.at<Vec3b>(i, j)[1] > threshold? 255: 0;
+            mask.at<Vec3b>(i, j)[2] = mask.at<Vec3b>(i, j)[2] > threshold? 255: 0;
+        }
+    }
 }
