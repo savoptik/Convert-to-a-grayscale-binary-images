@@ -73,3 +73,8 @@ cv::Mat hierarchicalBinarizationOtsu::generaitMask(ushort threshold) {
         }
     }
 }
+
+void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask, int numIt) { 
+    <#code#>
+}
+
