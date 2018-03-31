@@ -25,7 +25,9 @@ private:
     void binarisationHO(cv::Mat& mask, int numIt); // выполнение иерархической бинаризации.
     cv::Mat generaitMask(ushort threshold); // создание новой маски по гистограмме.
     ushort findThreshold(std::vector<int>& hist); // вычисление порога.
-    void imageAssembly();
+    void imageAssembly(); // сборка изображения.
+    void imageAssemblyNull(cv::Mat nullMask); // сборка с маской активных нулей.
+    void imageAssemblyUnit(cv::Mat unitMask); // сборка с маской активных единиц.
 };
 
 #endif /* hierarchicalBinarizationOtsu_hpp */

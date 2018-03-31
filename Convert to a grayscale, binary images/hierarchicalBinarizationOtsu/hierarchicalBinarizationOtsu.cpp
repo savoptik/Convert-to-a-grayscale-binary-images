@@ -98,3 +98,10 @@ hierarchicalBinarizationOtsu::hierarchicalBinarizationOtsu(std::string filepash,
     binarisationHO(globalMask.getImageMatrix(), iterations); // запуск рекурсивного создания масок.
     imageAssembly(); // сборка изображения из масок.
 }
+
+void hierarchicalBinarizationOtsu::imageAssembly() { 
+    for (int i = 0; i < masks.size(); i+=2) {
+        imageAssemblyNull(masks[i]); // собираем маску нулей.
+        imageAssemblyUnit(masks[i+1]); // собираем маску единиц.
+    }
+}
