@@ -38,6 +38,7 @@ int main(int argc, const char * argv[]) {
     // бинаризация Отсо локальная.
     binarisationOfOtsaLocal BOL(filePath, 8); // инициализация класса.
     BOL.showCurrentVersion(); // вывод изображения.
+    //БИнаризация Отсу иерархическая.
     hierarchicalBinarizationOtsu HBO(filePath, 4);
     HBO.showCurrentVersion();
     return 0;
