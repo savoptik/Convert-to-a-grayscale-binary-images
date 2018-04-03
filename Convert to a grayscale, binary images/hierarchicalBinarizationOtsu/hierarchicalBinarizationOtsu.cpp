@@ -33,6 +33,7 @@ std::vector<int> hierarchicalBinarizationOtsu::plotingHist(cv::Mat &mask, int ac
             }
         }
     }
+    return hist;
 }
 
 ushort hierarchicalBinarizationOtsu::findThreshold(std::vector<int>& hist) {
@@ -73,6 +74,7 @@ cv::Mat hierarchicalBinarizationOtsu::generaitMask(ushort threshold) {
             mask.at<Vec3b>(i, j)[2] = mask.at<Vec3b>(i, j)[2] > threshold? 255: 0;
         }
     }
+    return mask;
 }
 
 void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask, int numIt) { 
