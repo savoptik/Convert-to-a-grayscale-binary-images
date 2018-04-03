@@ -18,7 +18,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     string filePath = "/Users/artemsemenov/Documents/projects/xcode/Convert to a grayscale, binary images/images/апельсин.png"; // путь к файлу.
-    grayScale pic(filePath); // создание объекта
+/*    grayScale pic(filePath); // создание объекта
     pic.showCurrentVersion(); // вывод преобразованного изображения.
     // бинаризация с верхней границей
     binarysationSetthreshold bst1(filePath); // создание объекта преобразованного изображения
@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
     // бинаризация Отсо локальная.
     binarisationOfOtsaLocal BOL(filePath, 8); // инициализация класса.
     BOL.showCurrentVersion(); // вывод изображения.
-    hierarchicalBinarizationOtsu HBO(filePath, 4);
+*/    hierarchicalBinarizationOtsu HBO(filePath, 2);
     HBO.showCurrentVersion();
     return 0;
 }

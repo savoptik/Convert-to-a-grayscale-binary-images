@@ -82,9 +82,10 @@ void hierarchicalBinarizationOtsu::binarisationHO(cv::Mat &mask, int numIt) {
     std::vector<int> histUnit = plotingHist(mask, 255); // построение гистограммы для области активных единиц.
     ushort tNul = findThreshold(histNull); // поиск порога для бинаризации области активных нулей.
     ushort tUnit = findThreshold(histUnit); // поиск порога для бинаризации области активных единиц.
+    std::cout << "порог нулей " << tNul << " порог единиц " << tUnit << std::endl;
     Mat maskNul = generaitMask(tNul); // генерация маски.
     Mat maskUnit = generaitMask(tUnit);
-    if ((numIt-1) != 0) { // Если количество доступных итераций позволяет
+    if ((numIt) != 0) { // Если количество доступных итераций позволяет
         binarisationHO(maskNul, numIt-1); // рекурсивно вызываем этот же метод с нулевой маской и уменьшеным количеством итераций.
         binarisationHO(maskUnit, numIt-1); // вызываем тот же метод с активными единицами и уменьшеным количеством итераций.
     } else { // иначе значит что перамида рекурсии дошла до дна, и можно собирать маски с нижнего уровня.
@@ -97,6 +98,7 @@ hierarchicalBinarizationOtsu::hierarchicalBinarizationOtsu(std::string filepash,
     image = imread(filepash); // чтение файла.
     conversionTOGrayScale(); // приведение изображение к полутоновому.
     binarisationofWotso globalMask(image); // создание маски.
+    globalMask.conversionToBinaryOfVocoGlobale();
     binarisationHO(globalMask.getImageMatrix(), iterations); // запуск рекурсивного создания масок.
     imageAssembly(); // сборка изображения из масок.
 }

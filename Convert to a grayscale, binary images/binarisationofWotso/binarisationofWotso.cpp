@@ -71,7 +71,6 @@ void binarisationofWotso::conversionToBinaryOfVocoGlobale() {
 
 binarisationofWotso::binarisationofWotso(cv::Mat& exImage) { 
     image = exImage; // получение изображения.
-    conversionTOGrayScale(); // преведение к полутоновому.
     plottingHistogram(); // построение гистограммы.
 }
 

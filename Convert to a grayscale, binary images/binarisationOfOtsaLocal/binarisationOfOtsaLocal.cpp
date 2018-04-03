@@ -14,6 +14,7 @@ using namespace cv;
 
 binarisationOfOtsaLocal::binarisationOfOtsaLocal(std::string filepash, const int SL) {
     image = imread(filepash); // загрузка изображения.
+    conversionTOGrayScale();
     scaleLocalizationR = image.rows / SL; // записываем размер квадратиков.
     scaleLocalizationRC = image.cols / SL;
     cutImageIntoSquares(); // режем изображение на квадратики.
