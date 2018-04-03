@@ -17,6 +17,7 @@
 class hierarchicalBinarizationOtsu: binaryConversions {
 public:
     hierarchicalBinarizationOtsu(std::string filepash, int iterations); // конструктор загрузит изображение  и запустит преобразования.
+    hierarchicalBinarizationOtsu() {}
     ~hierarchicalBinarizationOtsu(); // деструктор освободит память.
     virtual void showCurrentVersion(); // вывод изображения.
 private:
